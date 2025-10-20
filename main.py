@@ -10,7 +10,7 @@ if DATABASE_URL:
         database=url.path[1:],
         user=serverless_db_fti8_user,
         password=rH8x2UvWQkvO7ZzOWqN9jb90Jl1cvnFS,
-        host=postgresql://serverless_db_fti8_user:rH8x2UvWQkvO7ZzOWqN9jb90Jl1cvnFS@dpg-d3que7ur433s73e1hctg-a/serverless_db_fti8,
+        host=dpg-d3que7ur433s73e1hctg-a,
         port=5432
     )
 else:
