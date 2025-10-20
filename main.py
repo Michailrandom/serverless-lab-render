@@ -7,7 +7,7 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
     url = urlparse(DATABASE_URL)
     conn = psycopg2.connect(
-        database=url.path[1:],
+        database=serverless_db_fti8,
         user=serverless_db_fti8_user,
         password=rH8x2UvWQkvO7ZzOWqN9jb90Jl1cvnFS,
         host=dpg-d3que7ur433s73e1hctg-a,
