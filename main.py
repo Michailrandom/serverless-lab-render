@@ -2,9 +2,7 @@ from flask import Flask, request, jsonify
 import psycopg
 import os
 from urllib.parse import urlparse
-
 app = Flask(__name__)
-
 # Подключение к БД
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
@@ -18,7 +16,6 @@ if DATABASE_URL:
     )
 else:
     conn = None
-
 # Создание таблицы при старте
 if conn:
     with conn.cursor() as cur:
@@ -30,12 +27,10 @@ if conn:
             )
         """)
         conn.commit()
-
 @app.route('/save', methods=['POST'])
 def save_message():
     if not conn:
         return jsonify({"error": "DB not connected"}), 500
-
     data = request.get_json()
     message = data.get('message', '') if data else ''
 
